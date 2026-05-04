@@ -1,0 +1,565 @@
+
+/*
+beige: #fffcf2
+green: #2c472b
+pale pink: #edd5e5
+black: #000000
+light-green: #68a65b
+*/
+
+
+@font-face{
+	font-family: Roboto;
+	src: url(fonts/Roboto-Regular.ttf);
+}
+
+@font-face{
+	font-family: RobotoMedium;
+	src: url(fonts/Roboto-Medium.ttf);
+}
+
+@font-face{
+	font-family: RobotoBold;
+	src: url(fonts/Roboto-Bold.ttf);
+}
+
+@font-face{
+	font-family: SourGummy;
+	src: url(fonts/SourGummy-Regular.ttf);
+}
+
+@font-face{
+	font-family:SourGummyBlack;
+	src: url(fonts/SourGummy-Black.ttf);
+}
+
+@font-face{
+	font-family: SourGummySemiBold;
+	src: url(fonts/SourGummy-SemiBold.ttf);
+}
+
+:root{
+	--menu-count: 6;
+}
+
+body{
+	background-color:#fffcf2;
+	overflow-x:hidden;
+}
+
+
+
+.mobile-menu-btn{
+	display:none;
+}
+
+.header-main{
+	width: 100%;
+	padding: 0 60px;
+	height: 60px;
+	background-color: #2c472b;
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	z-index:100;
+}
+
+.header-main nav{
+	display: flex;
+}
+
+.header-main .logo{
+	height: 40px;
+	width: fit-content;
+	align-self: center;
+	cursor: pointer;
+}
+
+.header-main .logo img{
+	height: 100%;
+}
+
+.header-main ul{
+	height: 100%;
+	padding-left:40px;
+	list-style: none;
+	display: flex;
+	align-self: center;
+}
+
+.header-main ul li{
+	position: relative;
+}
+
+.header-main ul li a{
+	display: block;
+	padding: 0 10px;
+	height: 100%;
+	line-height: 60px;
+	font-size: 1rem;
+	font-family: RobotoMedium;
+	color:#ffffff;
+	background-color:#2c472b;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all ease-in-out 100ms;
+	top: 0;
+	text-decoration:none;
+}
+
+.header-main ul li a:hover{
+	background-color: #edd5e5;
+	color: #000000
+}
+
+/* DROPDOWN STYLING START*/
+
+.header-main ul li ul{
+	visibility: hidden;
+	opacity: 0;
+	display: none;
+	position: absolute;
+	left: -40px;
+	transition: all ease-in-out 100ms;
+	z-index: 1;
+	top: 100%;
+}
+
+.header-main ul li ul li a{
+	white-space: nowrap;
+}
+
+ul li:hover>ul {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+}
+
+/*END*/
+/*
+.header-main .social{
+	align-self: center;
+	display: flex;
+}
+
+.header-main form{
+	height: 40px;
+	padding-right: 5px;
+	display: flex;
+	border: 1px solid #ffffff;
+	border-radius: 20px 100px 100px 20px;
+	width: fit-content;
+	align-self: center;
+}
+
+.header-main form input{
+	height: 100%;
+	width: 300px;
+	padding: 0 10px 0 20px;
+	border-radius: 5px;
+	font-size: 1rem;
+	font-family: Roboto;
+}
+
+.header-main form input:focus{
+	border: 1px solid #edd5e5;
+}
+
+.header-main form button{
+	width: fit-content;
+	padding: 0 5px 0 10px;
+}
+
+.header-main form button img{
+	height: 24px;
+	padding-top: 15%;
+	cursor: pointer;
+}
+
+
+.header-main .social-links{
+	height: 60px;
+	width: fit-content;
+	display: flex;
+	align-items: center;
+}
+
+.header-main .social-links img{
+	height: 30px;
+	margin-left: 10px;
+	cursor: pointer;
+	align-self: center;
+}
+*/
+
+/*@media only screen and (max-width:600px){
+	/*.header-main{
+		display:none;
+	}*/
+	/*.mobile-menu-btn{
+		display:flex;
+		justify-content: center;
+		width:60px;
+		height:60px;
+		top: 0;
+		right:0;
+		z-index: 200;
+		background-color: #ffffff;
+	}
+	
+	.mobil-menu-btn img{
+		height: 80%;
+		align-self: center;
+	}*/
+	
+	
+	/*.header-main{ 
+		height: 100vh;
+		flex-wrap: wrap;
+		flex-direction: column;
+		padding: 0;
+		justify-content: flex-start;
+	}
+	
+	.header-main nav{
+		width: 100%;
+		height: 80vh;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-content: stretch;
+	}
+	
+	.header-main .logo{
+		height: 30%;
+		padding:0;
+		margin:0;
+		display: flex;
+		align-items: center;
+	}
+	
+	.header-main .logo img{
+		height: 60%;
+		align-self: center;
+		cursor: pointer;
+	}
+	
+	.header-main ul{
+		height: 70%;
+		width: 100%;
+		padding: 0;
+		margin:0;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-content: space-between;
+	}
+	
+	.header-main ul li{
+		width: 100%;
+		height: calc(100% / var(--menu-count));
+		padding: 0;
+		margin: 0;
+		/* giving all menu items a border on top
+		border-top: 1px solid #ddd;
+		/* We set flex here, with nowrap and column, to make the dropdown go bellow the gallery, and justify-content instead since we are using column, to center the text
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
+		transition: all ease-in-out 100ms;
+		
+	}
+	
+	.header-main ul li:nth-last-child(1) {
+		border-bottom: 1px solid #ddd
+	}
+	
+	.header-main ul li a {
+		width: 100%;
+		height: fit-content;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		font-size: 2.5rem;
+	}
+	
+	.header-main ul li a:hover{
+		background-color: transparent;
+		color: #111;
+	}
+	
+	.header-main nav{
+		overflow-y:scroll;
+		overflow-x:hidden;
+		width: 100vw;
+	}
+	
+	.header-main ul li ul{
+		display:none;
+		flex-wrap: nowrap;
+		flex-direction:column;
+		position: absolute;
+		top:0;
+		left:0;
+		z-index:2000;
+	}
+	
+	.header-main ul li ul li{
+		height: fit-content;
+		display: block;
+		background-color: #edd5e5;
+	}
+
+}*/
+
+/*END MEDIA ONLY SCREEN*/
+
+@media only screen and (max-width:800px){
+	.header-main ul{
+	height: 100%;
+	padding-left:40px;
+	list-style: none;
+	display: flex;
+	align-self: center;
+}
+
+.header-main ul li{
+	position: relative;
+	display: wrap;
+}
+
+.header-main ul li a{
+	display: block;
+	padding: 0 10px;
+	height: 100%;
+	line-height: 60px;
+	font-size: 1rem;
+	font-family: RobotoMedium;
+	color:#ffffff;
+	background-color:#2c472b;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all ease-in-out 100ms;
+	top: 0;
+}
+
+
+}
+
+.image-container {
+  position: relative; 
+  display: inline-block; 
+}
+
+.base-image {
+  display: block;
+  width: 100%; 
+  height: 800px;
+  object-fit: cover;
+  position: relative;
+}
+
+.overlay-logo {
+  position: absolute; 
+  top: 25vh;         
+  left: 25vw;       
+  width: 50vw;     
+  z-index: 10;    
+  align-self: center;
+}
+
+h1{ 
+	font-family: SourGummyBlack;
+	font-size: 4rem;
+	color: #2c472b;
+}
+
+h2{
+	font-family: SourGummySemiBold;
+	font-size: 2rem;
+	color:#2c472b;
+}
+
+.sick{
+	color:#68a65b;
+}
+
+h3{
+	font-family:SourGummyBlack;
+	padding-top: 50px;
+	padding-left: 50px;
+	font-size: 5rem;
+	color: #2c472b;
+}
+
+p{
+	font-family: SourGummy;
+	color:#2c472b;
+	line-height: 35px;
+}
+
+ul{
+	font-family: SourGummy;
+	color:#2c472b;
+	line-height: 35px;
+}
+
+.wrapper{
+	background-color:#fffcf2;
+	width:70%;
+	margin: 0 auto;
+	max-width:1500px;
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+
+
+.lop-img img{
+	float:right;
+	width:30%;
+	max-width:1000px;
+	border-radius:10%;
+	margin-right:20px;
+	position:relative;
+	top:-250px;
+	border: 10px solid #68a65b;
+}
+	
+
+
+
+/*footer begins here*/
+
+.footer-basic {
+  padding:40px 0;
+  background-color:#edd5e5;
+  color:#2c472b;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  font-family:Roboto;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  color:#fffcf2;
+  text-decoration: underline;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #2c472b;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  color:#fffcf2;
+  border:1px solid #fffcf2;
+}
+
+footer{
+	margin:0;
+	padding: 0;
+}
+
+/*END FOOTER*/
+
+/*SICKNESS PAGE*/
+
+.title-bg{
+	background-color: #68a65b;
+	border-radius: 25px;
+	width: 100%;
+	height: 50px;
+	padding-top: 3px;
+	padding-left: 10px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	color:#fffcf2;
+}
+
+.snuffles{
+	float: right;
+	border-radius: 25px;
+	border: 8px solid #edd5e5;
+	width: 450px;
+	height: auto;
+	margin: 10px;
+	position: relative;
+}
+	
+@media only screen (max width 1020px){
+	
+	
+	.snuffles{
+	float: right;
+	border-radius: 25px;
+	border: 8px solid #edd5e5;
+	width: 200px;
+	height: auto;
+	margin: 10px;
+}
+	
+	
+	
+/*TABLE*/
+
+.veggie{
+	font-family: SourGummyRegular;
+	font-size: 2rem;
+	color:#2c472b;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+
+
+@media print {
+	header, nav, footer { display:none; }
+	main { width:100%; }
+	img { display:none; }
+}
+
+
+form input{
+	width:300px;
+	height:35px;
+	border-radius: 4px;
+	text-align: center;
+	outline: none;
+	border: 2px solid #DC143C;
+	align-content: left;
+	margin-left: 20px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	font-family: "Plus Jakarta Sans", sans-serif;
+}
